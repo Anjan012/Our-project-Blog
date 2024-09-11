@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="w-full">
+    <section
+      class="flex items-center px-10 justify-between w-full bg-green-400 h-16"
+    >
+      <div>
+        <a href="index.html">website logo</a>
+        <input
+          type="text"
+          placeholder="Search"
+          class="mx-5 px-5 py-1 rounded-3xl"
+        />
+      </div>
+      <div class="flex items-center">
+        <button class="border-2 border-gray-200 px-4 py-2 rounded">
+          <a href="article.html"
+            >write <i class="fa-regular fa-newspaper"></i
+          ></a>
+        </button>
+
+        <div class="">
+          <a href="notifications.html"> <i class="fa-solid fa-bell mx-8"></i></a>
+        </div>
+
+        <div class="relative">
+          <button id="profile-button" class="focus:outline-none">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Profile"
+              class="rounded-full w-10 h-10"
+            />
+          </button>
+          <!-- Dropdown Menu -->
+          <div
+            id="dropdown-menu"
+            class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg hidden"
+          >
+            <div class="p-4 text-center border-b">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Profile"
+                class="rounded-full w-16 h-16 mx-auto"
+              />
+              <h2 class="font-semibold text-lg mt-2">James Aldrino</h2>
+            </div>
+            <ul class="p-4">
+              <a
+                href="profile.html"
+                class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+              >
+                <i class="fa-regular fa-user"></i>
+                <span class="ml-4">Edit Profile</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+              >
+                <i class="fa-solid fa-gear"></i>
+                <span class="ml-4">Settings & Privacy</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+              >
+                <i class="fa-solid fa-headset"></i>
+                <span class="ml-4">Help & Support</span>
+              </a>
+              <a
+                href="login.html"
+                class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="ml-4">Logout</span>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full">
+      <div class="w-7/12 px-2 flex justify-center flex-row">
+        <div
+          class="w-5/6 min-w-96  bg-white border border-gray-200 rounded-lg shadow-md p-4 my-5"
+        >
+          <div class="flex items-center space-x-4">
+            <div
+              class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l6.16-3.422A12.042 12.042 0 0118 12c0 3.866-2.239 7.243-5.5 8.661L12 14z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14v8.66c-3.261-1.418-5.5-4.795-5.5-8.661a12.042 12.042 0 01.84-4.422L12 14z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-gray-900 font-semibold">user</h3>
+              <p class="text-gray-500 text-sm">27 Aug 2024</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <a href="#" class="text-lg font-bold text-gray-900">
+              “AI will continue to get way more capable”
+            </a>
+            <p class="text-gray-700 mt-2">
+              “People are using it to create amazing things. If we could see
+              what each of us ...”
+            </p>
+          </div>
+          <div class="flex items-center mt-4 ">
+            <div>
+              <p class="text-gray-400">Sept 2 2024</p>
+            </div>
+            <div class="flex space-x-4 p-3 ml-4">
+              <div class="flex items-center">
+                <i id="like" class="fa-solid fa-heart text-lg"></i>
+                <span class="text-gray-500 text-center ml-2 " id="like-counter"
+                  >0</span
+                >
+              </div>
+
+              <div class="flex items-center">
+                <i class="fa-solid fa-share text-lg"></i>
+                <span class="text-gray-500 text-center ml-2" id="share-counter"
+                  >0</span
+                  >
+                </div>
+                
+                <div >
+                  <i class="fa-solid fa-circle-minus text-lg"></i>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/37a24c872b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // JavaScript to toggle dropdown visibility
+      const profileButton = document.getElementById("profile-button");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+
+      profileButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Optional: Close dropdown when clicking outside of it
+      window.addEventListener("click", function (e) {
+        if (
+          !profileButton.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+
+      let like_count = document.getElementById("like-counter");
+
+      document.querySelector("#like").addEventListener("click", function () {
+        if (this.style.color == "red") {
+          this.style.color = "";
+          like_count.textContent = parseInt(like_count.textContent) - 1;
+        } else {
+          this.style.color = "red";
+          like_count.textContent = parseInt(like_count.textContent) + 1;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="w-full bg-gray-100">
+    <section
+    class="flex items-center px-10 justify-between w-full bg-green-400 h-16"
+  >
+    <div>
+      <a href="index.html">website logo</a>
+      <input
+        type="text"
+        placeholder="Search"
+        class="mx-5 px-5 py-1 rounded-3xl"
+      />
+    </div>
+    <div class="flex items-center">
+      <button class="border-2 border-gray-200 px-4 py-2 rounded "><a href="article.html">write <i class="fa-regular fa-newspaper"></i></a></button>
+
+      <div class="">
+        <a href="notifications.html"> <i class="fa-solid fa-bell mx-8"></i></a>
+      </div>
+
+
+      <div class="relative">
+        <button id="profile-button" class="focus:outline-none">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Profile"
+            class="rounded-full w-10 h-10"
+          />
+        </button>
+        <!-- Dropdown Menu -->
+        <div
+          id="dropdown-menu"
+          class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg hidden"
+        >
+          <div class="p-4 text-center border-b">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Profile"
+              class="rounded-full w-16 h-16 mx-auto"
+            />
+            <h2 class="font-semibold text-lg mt-2">James Aldrino</h2>
+          </div>
+          <ul class="p-4">
+            <a
+              href="profile.html"
+              class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+            >
+              <svg
+                class="w-6 h-6 text-gray-500 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5.121 19.121A3 3 0 006.343 21H17.657a3 3 0 001.222-.879l4.707-4.707a3 3 0 000-4.242L17.879 4.121a3 3 0 00-4.242 0l-4.707 4.707a3 3 0 00-.879 1.222L2 17.657a3 3 0 003.121 1.464z"
+                ></path>
+              </svg>
+              <span>Edit Profile</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+            >
+              <svg
+                class="w-6 h-6 text-gray-500 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 10V6a2 2 0 012-2h8a2 2 0 012 2v4m-4 10v-6h-4v6m4-2h4m-6-6h6m-6-4v-4"
+                ></path>
+              </svg>
+              <span>Settings & Privacy</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+            >
+              <svg
+                class="w-6 h-6 text-gray-500 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 16v-4a4 4 0 014-4h.01m4.184 2.582a2.5 2.5 0 00.828-1.965V9.5a2.5 2.5 0 00-.828-1.965l-3.707-3.707a1 1 0 00-1.414 0L8.707 7.535a1 1 0 000 1.414L15.121 15H18a1 1 0 01.707.293l2.293 2.293a1 1 0 01-.707 1.707h-7a1 1 0 01-1-1v-1a1 1 0 00-1-1h-2.293l-2.293-2.293z"
+                ></path>
+              </svg>
+              <span>Help & Support</span>
+            </a>
+            <a
+              href="login.html"
+              class="flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+            >
+              <svg
+                class="w-6 h-6 text-gray-500 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 13l3 3L22 4m-9 11v4m-4 4h8"
+                ></path>
+              </svg>
+              <span>Logout</span>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- Profile Section -->
+<section class="w-full flex justify-center">
+  <div class="w-4/5 flex bg-white my-14 py-4">
+      <div class="w-56 mr-8">
+          <img src="img/profile.png" alt="" class="w-full ">
+      </div>
+      <div class="py-9 w-full">
+          <!-- Profile Information -->
+          <h2 id="profileName" class="py-3 text-3xl">Anjan Khadka</h2>
+          <button id="editProfileBtn" class="px-7 py-3 border-2">Edit profile</button>
+          <button class="px-7 py-3 border-2 bg-green-400 text-white">Follow</button>
+
+          <div class="py-2">
+              <a id="facebookLink" href="#"><i class="fa-brands fa-facebook-f text-2xl p-2"></i></a>
+              <a id="instagramLink" href="#"><i class="fa-brands fa-instagram text-2xl p-2"></i></a>
+              <a id="linkedinLink" href="#"><i class="fa-brands fa-linkedin-in text-2xl p-2"></i></a>
+          </div>
+
+          <div class="w-1/2 p-2 bg-yellow-300">
+              <p id="profileBio" class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt animi cupiditate assumenda quod voluptate tempora praesentium harum minus deleniti, repudiandae fugit facere autem dolores!</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Modal for Editing Profile -->
+<div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+  <div class=" bg-white p-8 rounded-lg w-1/2 relative">
+      <button id="closeModalBtn" class="absolute top-3 right-3 text-black text-xl">&times;</button>
+      <h2 class="text-2xl mb-4">Edit Profile</h2>
+      <form id="profileForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" value="Anjan Khadka" class="w-full mb-4 p-2 border-2">
+
+          <label for="bio">Bio:</label>
+          <textarea id="bio" class="w-full mb-4 p-2 border-2" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</textarea>
+
+          <label for="facebook">Facebook URL:</label>
+          <input type="url" id="facebook" class="w-full mb-4 p-2 border-2" placeholder="https://facebook.com/yourprofile">
+
+          <label for="instagram">Instagram URL:</label>
+          <input type="url" id="instagram" class="w-full mb-4 p-2 border-2" placeholder="https://instagram.com/yourprofile">
+
+          <label for="linkedin">LinkedIn URL:</label>
+          <input type="url" id="linkedin" class="w-full mb-4 p-2 border-2" placeholder="https://linkedin.com/in/yourprofile">
+
+          <button type="submit" class="px-4 py-2 bg-green-500 text-white">Save Changes</button>
+      </form>
+  </div>
+</div>
+
+
+    
+    <script
+      src="https://kit.fontawesome.com/37a24c872b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // JavaScript to toggle dropdown visibility
+      const profileButton = document.getElementById("profile-button");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+
+      profileButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Optional: Close dropdown when clicking outside of it
+      window.addEventListener("click", function (e) {
+        if (
+          !profileButton.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+
+      
+
+     // Get DOM elements
+     const editProfileBtn = document.getElementById('editProfileBtn');
+    const profileModal = document.getElementById('profileModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const profileForm = document.getElementById('profileForm');
+    const profileName = document.getElementById('profileName');
+    const profileBio = document.getElementById('profileBio');
+    const facebookLink = document.getElementById('facebookLink');
+    const instagramLink = document.getElementById('instagramLink');
+    const linkedinLink = document.getElementById('linkedinLink');
+
+    // Show the modal when "Edit Profile" is clicked
+    editProfileBtn.addEventListener('click', function() {
+        profileModal.classList.remove('hidden');
+    });
+
+    // Hide the modal when "Close" button is clicked
+    closeModalBtn.addEventListener('click', function() {
+        profileModal.classList.add('hidden');
+    });
+
+    // Hide the modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target === profileModal) {
+            profileModal.classList.add('hidden');
+        }
+    });
+
+    // Handle form submission to update profile
+    profileForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page refresh
+
+        // Get new values from form inputs
+        const newName = document.getElementById('name').value;
+        const newBio = document.getElementById('bio').value;
+        const newFacebook = document.getElementById('facebook').value;
+        const newInstagram = document.getElementById('instagram').value;
+        const newLinkedin = document.getElementById('linkedin').value;
+
+        // Update the profile display
+        profileName.textContent = newName;
+        profileBio.textContent = newBio;
+        facebookLink.href = newFacebook || "#"; // If empty, link to "#"
+        instagramLink.href = newInstagram || "#";
+        linkedinLink.href = newLinkedin || "#";
+
+        // Hide the modal after saving changes
+        profileModal.classList.add('hidden');
+    });
+    </script>
+  </body>
+</html>

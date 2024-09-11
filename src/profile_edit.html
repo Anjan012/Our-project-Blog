@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="w-full bg-gray-100">
+    <!-- Edit Profile Button -->
+
+<!-- Profile Section -->
+<section class="w-full flex justify-center">
+    <div class="w-4/5 flex bg-white my-14 py-4">
+        <div class="w-56 mr-8">
+            <img src="img/profile.png" alt="" class="w-full ">
+        </div>
+        <div class="py-9 w-full">
+            <!-- Profile Information -->
+            <h2 id="profileName" class="py-3 text-3xl">Anjan Khadka</h2>
+            <button id="editProfileBtn" class="px-7 py-3 border-2">Edit profile</button>
+            <button class="px-7 py-3 border-2 bg-green-400 text-white">Follow</button>
+
+            <div class="py-2">
+                <a id="facebookLink" href="#"><i class="fa-brands fa-facebook-f text-2xl p-2"></i></a>
+                <a id="instagramLink" href="#"><i class="fa-brands fa-instagram text-2xl p-2"></i></a>
+                <a id="linkedinLink" href="#"><i class="fa-brands fa-linkedin-in text-2xl p-2"></i></a>
+            </div>
+
+            <div class="w-1/2 p-2 bg-yellow-300">
+                <p id="profileBio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt animi cupiditate assumenda quod voluptate tempora praesentium harum minus deleniti, repudiandae fugit facere autem dolores!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Editing Profile -->
+<div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class=" bg-white p-8 rounded-lg w-1/2 relative">
+        <button id="closeModalBtn" class="absolute top-3 right-3 text-black text-xl">&times;</button>
+        <h2 class="text-2xl mb-4">Edit Profile</h2>
+        <form id="profileForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="Anjan Khadka" class="w-full mb-4 p-2 border-2">
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" class="w-full mb-4 p-2 border-2" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</textarea>
+
+            <label for="facebook">Facebook URL:</label>
+            <input type="url" id="facebook" class="w-full mb-4 p-2 border-2" placeholder="https://facebook.com/yourprofile">
+
+            <label for="instagram">Instagram URL:</label>
+            <input type="url" id="instagram" class="w-full mb-4 p-2 border-2" placeholder="https://instagram.com/yourprofile">
+
+            <label for="linkedin">LinkedIn URL:</label>
+            <input type="url" id="linkedin" class="w-full mb-4 p-2 border-2" placeholder="https://linkedin.com/in/yourprofile">
+
+            <button type="submit" class="px-4 py-2 bg-green-500 text-white">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Get DOM elements
+    const editProfileBtn = document.getElementById('editProfileBtn');
+    const profileModal = document.getElementById('profileModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const profileForm = document.getElementById('profileForm');
+    const profileName = document.getElementById('profileName');
+    const profileBio = document.getElementById('profileBio');
+    const facebookLink = document.getElementById('facebookLink');
+    const instagramLink = document.getElementById('instagramLink');
+    const linkedinLink = document.getElementById('linkedinLink');
+
+    // Show the modal when "Edit Profile" is clicked
+    editProfileBtn.addEventListener('click', function() {
+        profileModal.classList.remove('hidden');
+    });
+
+    // Hide the modal when "Close" button is clicked
+    closeModalBtn.addEventListener('click', function() {
+        profileModal.classList.add('hidden');
+    });
+
+    // Hide the modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target === profileModal) {
+            profileModal.classList.add('hidden');
+        }
+    });
+
+    // Handle form submission to update profile
+    profileForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page refresh
+
+        // Get new values from form inputs
+        const newName = document.getElementById('name').value;
+        const newBio = document.getElementById('bio').value;
+        const newFacebook = document.getElementById('facebook').value;
+        const newInstagram = document.getElementById('instagram').value;
+        const newLinkedin = document.getElementById('linkedin').value;
+
+        // Update the profile display
+        profileName.textContent = newName;
+        profileBio.textContent = newBio;
+        facebookLink.href = newFacebook || "#"; // If empty, link to "#"
+        instagramLink.href = newInstagram || "#";
+        linkedinLink.href = newLinkedin || "#";
+
+        // Hide the modal after saving changes
+        profileModal.classList.add('hidden');
+    });
+</script>
+
+
+
+
+    
+    <script
+      src="https://kit.fontawesome.com/37a24c872b.js"
+      crossorigin="anonymous"
+    ></script>
+  
+  </body>
+</html>
